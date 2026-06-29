@@ -1,7 +1,7 @@
 # Image-Recognition-Animals
 
 ## Description
-A Flask web application that uses a TensorFlow/Keras CNN model to classify images.
+A Flask web application that uses a TensorFlow/Keras CNN model to classify images according to the classes.
 
 ## Features
 - Upload image
