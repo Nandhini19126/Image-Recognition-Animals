@@ -4,7 +4,7 @@ from tensorflow.keras import datasets, layers, models
 # Load CIFAR-10 Dataset
 (x_train, y_train), (x_test, y_test) = datasets.cifar10.load_data()
 
-# Normalize Images
+# Normalize the Images
 x_train = x_train / 255.0
 x_test = x_test / 255.0
 
@@ -24,18 +24,17 @@ model = models.Sequential([
     layers.Dense(10, activation='softmax')
 ])
 
-# Compile Model
+# Compiling Model
 model.compile(
     optimizer='adam',
     loss='sparse_categorical_crossentropy',
     metrics=['accuracy']
 )
 
-# Train Model
+# Training the Model
 model.fit(x_train, y_train, epochs=10,
           validation_data=(x_test, y_test))
 
-# Save Model
+# Save the Model
 model.save("image_classifier.h5")
-
 print("Model Saved Successfully!")
