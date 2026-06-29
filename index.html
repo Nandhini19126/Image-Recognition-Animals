@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Recognition System</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static',
+          filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Image Recognition System</h1>
+
+    <form action="/predict"
+          method="POST"
+          enctype="multipart/form-data">
+
+        <input type="file"
+               name="image"
+               required>
+
+        <button type="submit">
+            Predict
+        </button>
+
+    </form>
+
+    {% if image_path %}
+        <img src="{{ image_path }}"
+             width="300">
+    {% endif %}
+
+    {% if prediction %}
+        <h2>Prediction: {{ prediction }}</h2>
+        <h3>Confidence: {{ confidence }}%</h3>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
