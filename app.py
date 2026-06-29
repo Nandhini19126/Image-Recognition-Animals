@@ -6,7 +6,7 @@ import os
 
 app = Flask(__name__)
 
-# Load trained model
+# Loading the trained model
 model = tf.keras.models.load_model(
     "image_classifier.h5"
 )
